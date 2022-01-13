@@ -1,7 +1,8 @@
 // import browser from 'webextension-polyfill'
 
+import browser from 'webextension-polyfill'
 import { Inject } from './injectConsent'
-import browser from "webextension-polyfill";
+import { retry } from './utils'
 
 // async function init1() {
 //   const options = await optionsStorage.getAll()
@@ -77,10 +78,11 @@ import browser from "webextension-polyfill";
 // // }
 //
 // console.info('content')
+
 browser.storage.sync.get('enable').then((options) => {
   console.log('options', options)
   const enable = options['enable']
-  if(!enable){
+  if (!enable) {
     console.log('not enable')
     return false
   }
@@ -93,5 +95,28 @@ browser.storage.sync.get('enable').then((options) => {
     document.documentElement.appendChild(script)
   }
   setTimeout(() => embed(Inject), 100)
+  let results: any = null
+  window.addEventListener('message', async (event) => {
+    if (event.data && event.data.type === 'GDPR_HELPER') {
+      console.log('new window message', event.data)
+      results = event.data.results
+      if (results) {
+        await retry(async () =>
+          browser.runtime.sendMessage({ results: results })
+        )
+      }
+    }
+  })
+  setTimeout(() => {
+    browser.runtime.onMessage.addListener(async (message) => {
+      console.log('new runtime message', message, results)
+      if (message.type === 'GET_RESULT' && results) {
+        await retry(async () =>
+          browser.runtime.sendMessage({ results: results })
+        )
+      }
+    })
+  }, 5000)
+
   return true
 })
