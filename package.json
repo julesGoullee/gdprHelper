@@ -7,13 +7,15 @@
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "chronme:dev": "web-ext run -t chromium",
-    "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr"
+    "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
+    "deploy:ghpages": "gh-pages -d src/static"
   },
   "browserslist": [
     "last 1 Chrome version",
     "last 1 Firefox version"
   ],
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "webextension-polyfill": "^0.8.0"
   },
   "devDependencies": {
