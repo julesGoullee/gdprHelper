@@ -1,0 +1,6 @@
+node_modules
+distribution
+web-ext-artifacts
+.parcel-cache
+.idea
+.DS_Store

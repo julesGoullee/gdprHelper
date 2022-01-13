@@ -1,0 +1,29 @@
+{
+  "name": "GDPR Helper",
+  "version": "0.0.1",
+  "description": "GDPR browser extension",
+  "homepage_url": "https://github.com",
+  "manifest_version": 2,
+  "minimum_chrome_version": "74",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "title"
+  },
+  "web_accessible_resources": [],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.ts"]
+  }
+}
