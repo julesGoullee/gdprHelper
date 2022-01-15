@@ -10,7 +10,7 @@ body {
   font-weight: 700;
 }
 
-#toggle {
+.btn {
   background-color: #fff;
   border: 1px solid #dbdbdb;
   padding: 0.5em;
@@ -19,6 +19,9 @@ body {
   box-sizing: border-box;
   color: #363636;
   cursor: pointer;
+}
+
+#toggle {
   &.enable {
     background-color: #2ea44f;
   }
@@ -28,20 +31,37 @@ body {
 }
 
 #link-annoyance-list-container {
-  padding: 10px;
+  padding: 0.5em;
 }
+
 #link-annoyance-list {
   color: #363636;
+}
+
+#results-title {
+  padding: 0.5em;
+  font-weight: 600;
 }
 
 #results-container {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5em 0;
   li {
     padding: 0.5em 1em;
     a {
       color: #363636;
     }
+  }
+}
+
+#btn-add-website {
+  margin-bottom: 0.5em;
+  background-color: #2e61a4;
+  color: #fff;
+  &.disable {
+    color: #363636;
+    cursor: not-allowed;
+    background-color: #fff;
   }
 }

@@ -474,6 +474,13 @@ export function Inject() {
         result = true
         results.gitbookBanner = true
       }
+
+      // https://www.linguee.fr/
+      if (hideElements('#snigel-cmp-framework')) {
+        console.info('######################## snigel')
+        result = true
+        results.snigel = true
+      }
     }
     if (window.__tcfapi) {
       // https://www.vanityfair.fr
