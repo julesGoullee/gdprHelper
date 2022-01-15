@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  text-align: center;
+}
+
+#title {
+  padding: 10px;
+  font-weight: 700;
+}
+
+#toggle {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #363636;
+  cursor: pointer;
+  &.enable {
+    background-color: #2ea44f;
+  }
+  &.disable {
+    background-color: #ea4c89;
+  }
+}
+
+#link-annoyance-list-container {
+  padding: 10px;
+}
+#link-annoyance-list {
+  color: #363636;
+}
+
+#results-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0.5em 1em;
+    a {
+      color: #363636;
+    }
+  }
+}

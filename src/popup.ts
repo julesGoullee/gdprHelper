@@ -1,6 +1,14 @@
 import browser from 'webextension-polyfill'
 import { retry } from './utils'
 
+const detailsLink: any = {
+  tcfapi:
+    'https://iabeurope.eu/iab-europe-transparency-consent-framework-policies',
+  didomi: 'https://www.didomi.io',
+  sirdata: 'https://sirdata.com',
+  oneTrust: 'https://www.onetrust.com',
+  usercentrics: 'https://usercentrics.com',
+}
 async function init() {
   const btnToggle = document.querySelector('#toggle')
 
@@ -10,13 +18,19 @@ async function init() {
   const options = await browser.storage.sync.get()
   let enable = options['enable']
   btnToggle.textContent = enable ? 'Disable' : 'Enable'
+  btnToggle.textContent = enable ? 'Disable' : 'Enable'
+  btnToggle.classList.add(enable ? 'disable' : 'enable')
 
   btnToggle.addEventListener('click', async () => {
     if (enable) {
       btnToggle.textContent = 'Enable'
+      btnToggle.classList.remove('disable')
+      btnToggle.classList.add('enable')
       enable = false
     } else {
       btnToggle.textContent = 'Disable'
+      btnToggle.classList.remove('enable')
+      btnToggle.classList.add('disable')
       enable = true
     }
     await browser.storage.sync.set({ enable })
@@ -38,19 +52,22 @@ async function init() {
   if (!resultContainer) {
     throw new Error('resultContainer missing')
   }
-  console.log('add listener')
   browser.runtime.onMessage.addListener((message, sender) => {
     console.log('got message', message, sender.tab?.windowId)
     resultContainer.innerHTML = ''
     Object.keys(message.results).forEach((key) => {
       const el = document.createElement('li')
-      el.textContent = `${key}: ${message.results[key]}`
+      const link = document.createElement('a')
+      link.target = '_blank'
+      el.appendChild(link)
+      if (detailsLink[key]) {
+        link.href = detailsLink[key]
+      }
+      link.textContent = `${key}`
       resultContainer.appendChild(el)
     })
   })
-  console.log('get tabs')
   const tabs = await browser.tabs.query({
-    // currentWindow: true,
     lastFocusedWindow: true,
     active: true,
   })
@@ -58,7 +75,6 @@ async function init() {
   if (!tab || !tab.id) {
     throw new Error('tab missing')
   }
-  console.log('sendMessage', tab.windowId)
   await retry(
     () => tab.id && browser.tabs.sendMessage(tab.id, { type: 'GET_RESULT' })
   )

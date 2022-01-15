@@ -7,10 +7,12 @@ declare module 'consent' {
       cmp: any
       Osano: any
       usercentrics: any
+      uc: any
       cmpmngr: any
       _iub: any
       truste: any
       __tcfapi: any
+      Sddan: any
     }
   }
 }
