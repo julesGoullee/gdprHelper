@@ -18,9 +18,17 @@ export const Config: any = {
       url: 'https://www.onetrust.com',
       label: 'One trust',
     },
+    orejime: {
+      url: 'https://orejime.empreintedigitale.fr',
+      label: 'Orejime',
+    },
     osano: {
       url: 'https://www.osano.com',
       label: 'Osano',
+    },
+    sibbo: {
+      url: 'https://sibboventures.com',
+      label: 'Sibbo',
     },
     sirdata: {
       url: 'https://sirdata.com',
@@ -38,7 +46,6 @@ export const Config: any = {
       url: 'https://usercentrics.com',
       label: 'User centrics',
     },
-
     snigel: {
       url: 'https://snigel.com/adconsent',
       label: 'Snigel',

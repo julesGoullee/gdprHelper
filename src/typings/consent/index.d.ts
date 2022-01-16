@@ -7,6 +7,8 @@ declare module 'consent' {
       cmp: any
       Osano: any
       usercentrics: any
+      SibboCMP: any
+      orejime: any
       uc: any
       cmpmngr: any
       _iub: any

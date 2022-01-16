@@ -15,6 +15,11 @@ export class TcfApiProvider {
         // this.done = true
         this.labels.add('tcfApi')
       })
+      window.__tcfapi('reject', 2, () => {
+        window.__tcfapi('toggleConsentTool', 2, null, false)
+        this.labels.add('tcfApi')
+        this.found = true
+      })
       // window.__tcfapi('getTCData', 2, (tcData: any, ok: any) => {
       //   console.info('getTCData', tcData, ok)
       // })

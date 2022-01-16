@@ -5,7 +5,9 @@ import { ElementsProvider } from './elements'
 import { GoogleProvider } from './google'
 import { IubendaProvider } from './iubenda'
 import { OneTrustProvider } from './oneTrust'
+import { OrejimeProvider } from './orejime'
 import { OsanoProvider } from './osano'
+import { SibboProvider } from './shibbo'
 import { SirdataProvider } from './sirdata'
 import { TcfApiProvider } from './tcfApi'
 import { TrustArcProvider } from './trustarc'
@@ -19,7 +21,9 @@ export const providers = [
   new GoogleProvider(),
   new IubendaProvider(),
   new OneTrustProvider(),
+  new OrejimeProvider(),
   new OsanoProvider(),
+  new SibboProvider(),
   new SirdataProvider(),
   new TcfApiProvider(),
   new TrustArcProvider(),

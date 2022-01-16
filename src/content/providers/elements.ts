@@ -144,7 +144,7 @@ export class ElementsProvider {
   }
 
   checkGitBook(): boolean {
-    if (hideElements('#animatedComponent')) {
+    if (clickElements(`#animatedComponent > div > div > div[tabindex="0"]`)) {
       // gitbook.com
       console.info('######################## gitbookBanner')
       this.labels.add('gitbookBanner')
