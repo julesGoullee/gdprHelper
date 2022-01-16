@@ -21,9 +21,9 @@
     "default_popup": "popup/popup.html",
     "default_title": "title"
   },
-  "web_accessible_resources": [],
+  "web_accessible_resources": ["content/injectConsent.ts"],
   "background": {
-    "persistent": false,
+    "persistent": true,
     "scripts": ["background.ts"]
   }
 }

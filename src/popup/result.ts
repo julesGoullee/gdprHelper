@@ -68,17 +68,17 @@ export class Result {
         this.container.innerHTML = 'Nothing'
       } else {
         this.container.innerHTML = ''
-        Object.keys(message.results).forEach((key) => {
-          console.log('keeeeeey', key)
+        message.results.forEach((label: string) => {
+          console.log('label', label)
           const el = document.createElement('li')
           const link = document.createElement('a')
           link.target = '_blank'
           el.appendChild(link)
-          if (Config.details[key]) {
-            link.href = Config.details[key].url
-            link.textContent = `${Config.details[key].label}`
+          if (Config.details[label]) {
+            link.href = Config.details[label].url
+            link.textContent = `${Config.details[label].label}`
           } else {
-            link.textContent = key
+            link.textContent = label
           }
           this.container.appendChild(el)
         })
