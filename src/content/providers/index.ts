@@ -11,6 +11,7 @@ import { SibboProvider } from './shibbo'
 import { SirdataProvider } from './sirdata'
 import { TcfApiProvider } from './tcfApi'
 import { TrustArcProvider } from './trustarc'
+import { TrustCommanderProvider } from './trustCommander'
 import { UserCentricsProvider } from './userCentrics'
 
 export const providers = [
@@ -27,5 +28,6 @@ export const providers = [
   new SirdataProvider(),
   new TcfApiProvider(),
   new TrustArcProvider(),
+  new TrustCommanderProvider(),
   new UserCentricsProvider(),
 ]

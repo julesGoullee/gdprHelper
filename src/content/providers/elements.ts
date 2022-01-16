@@ -22,6 +22,7 @@ export class ElementsProvider {
     'checkStackoverflow',
     'checkGitBook',
     'checkSnigel',
+    'checkSfr',
   ]
 
   check() {
@@ -158,6 +159,16 @@ export class ElementsProvider {
       // https://www.linguee.fr
       console.info('######################## snigel')
       this.labels.add('snigel')
+      return true
+    }
+    return false
+  }
+
+  checkSfr(): boolean {
+    if (hideElements('#CkC')) {
+      // https://www.sfr.fr
+      console.info('######################## sfr')
+      this.labels.add('sfr')
       return true
     }
     return false

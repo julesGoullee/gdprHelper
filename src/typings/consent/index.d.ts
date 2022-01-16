@@ -7,6 +7,7 @@ declare module 'consent' {
       cmp: any
       Osano: any
       usercentrics: any
+      tc_closePrivacyButton: any
       SibboCMP: any
       orejime: any
       uc: any

@@ -6,7 +6,7 @@ export class SirdataProvider {
   labels: Set<string> = new Set()
   key = 'sirdata'
   check() {
-    if (!!window.Sddan && window.Sddan.cmpLoaded) {
+    if (window.Sddan && window.Sddan.cmpLoaded) {
       console.info('######################## sirdata')
       if (
         clickElements(

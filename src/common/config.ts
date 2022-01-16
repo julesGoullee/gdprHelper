@@ -42,6 +42,10 @@ export const Config: any = {
       url: 'https://trustarc.com',
       label: 'Trust Arc',
     },
+    trustCommander: {
+      url: 'https://www.commandersact.com/en/solutions/trustcommander',
+      label: 'Trust Commander',
+    },
     userCentrics: {
       url: 'https://usercentrics.com',
       label: 'User centrics',
