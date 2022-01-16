@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { hideElements } from '../utils'
 
 export class AxeptioProvider {
@@ -9,7 +10,7 @@ export class AxeptioProvider {
   check() {
     // https://www.frenchweb.fr
     if (window.axeptioSDK) {
-      console.info('######################## axeptio')
+      logger('######################## axeptio')
       if (hideElements('.axeptio_mount')) {
         this.found = true
         this.done = true

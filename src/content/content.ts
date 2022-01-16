@@ -1,11 +1,11 @@
 import axios from 'axios'
 import browser from 'webextension-polyfill'
-import { retry } from '../common/utils'
+import { logger, retry } from '../common/utils'
 
 let results: any = null
 
 async function injectScript(path: string) {
-  console.info('injectScript')
+  logger('injectScript', path)
   const script = document.createElement('script')
   script.type = 'text/javascript'
   script.async = true
@@ -17,7 +17,7 @@ async function injectScript(path: string) {
 function listenInject() {
   window.addEventListener('message', async (event) => {
     if (event.data && event.data.type === 'GDPR_HELPER') {
-      console.log('new window message', event.data)
+      logger('new window message', event.data)
       results = event.data.results
       if (results) {
         await retry(async () =>
@@ -33,7 +33,7 @@ function listenInject() {
 
 function listenPopup() {
   browser.runtime.onMessage.addListener(async (message) => {
-    console.log('new runtime message', message, results)
+    logger('new runtime message', message, results)
     if (message.type === 'GET_RESULT' && results) {
       await retry(async () =>
         browser.runtime.sendMessage({
@@ -47,10 +47,10 @@ function listenPopup() {
 
 async function init(): Promise<boolean> {
   const options = await browser.storage.sync.get('enable')
-  console.log('options', options)
+  logger('options', options)
   const enable = options['enable']
   if (!enable) {
-    console.log('not enable')
+    logger('not enable')
     return false
   }
   listenInject()

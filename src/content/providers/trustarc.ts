@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { hideElements } from '../utils'
 
 export class TrustArcProvider {
@@ -9,7 +10,7 @@ export class TrustArcProvider {
   check() {
     // https://www.forbes.com
     if (window.truste) {
-      console.info('######################## trustarc')
+      logger('######################## trustarc')
       const banner1 = hideElements('.trustarc-banner-section')
       const overlay1 = hideElements('#trustarc-banner-overlay')
 

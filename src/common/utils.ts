@@ -1,3 +1,5 @@
+import { Config } from './config'
+
 export const wait = async (ms: number) => {
   return new Promise((resolve) => {
     setTimeout(resolve, ms)
@@ -15,3 +17,4 @@ export async function retry(fn: Function, i = 0): Promise<any> {
     }
   }
 }
+export const logger: any = Config.debug ? console.log : () => {}

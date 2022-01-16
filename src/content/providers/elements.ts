@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import {
   clickElements,
   hideElements,
@@ -48,7 +49,7 @@ export class ElementsProvider {
   checkYahoo(): boolean {
     if (clickElements('#consent-page button.reject-all')) {
       // yahoo.com
-      console.info('######################## yahoo')
+      logger('######################## yahoo')
       this.labels.add('yahoo')
       return true
     }
@@ -58,7 +59,7 @@ export class ElementsProvider {
   checkNytimes(): boolean {
     if (clickElements('[data-testid="expanded-dock-btn-selector"]')) {
       // https://www.nytimes.com
-      console.info('######################## bannerNytimes')
+      logger('######################## bannerNytimes')
       this.labels.add('bannerNytimes')
       return true
     }
@@ -68,7 +69,7 @@ export class ElementsProvider {
   checkFacebook(): boolean {
     if (removeElements('[data-testid="cookie-policy-dialog"]')) {
       // https://www.facebook.com
-      console.info('######################## facebook')
+      logger('######################## facebook')
       this.labels.add('facebook')
       return true
     }
@@ -78,7 +79,7 @@ export class ElementsProvider {
   checkAmazon(): boolean {
     // https://www.amazon.fr
     if (removeElements('[action="/cookieprefs?ref_=portal_banner_all"]')) {
-      console.info('######################## amz banner')
+      logger('######################## amz banner')
       this.labels.add('amazon')
       return true
     }
@@ -88,7 +89,7 @@ export class ElementsProvider {
   checkNouvelobs(): boolean {
     // https://www.nouvelobs.com
     if (hideElements('#cookiesEncourag')) {
-      console.info('######################## dataGdprExpressionBannerNoObs')
+      logger('######################## dataGdprExpressionBannerNoObs')
       this.labels.add('dataGdprExpressionBannerNoObs')
       return true
     }
@@ -99,17 +100,17 @@ export class ElementsProvider {
     let returnValue = false
     // https://www.lemonde.fr
     if (clickElements('[data-gdpr-expression="denyAll"]')) {
-      console.info('######################## dataGdprExpressionBtn')
+      logger('######################## dataGdprExpressionBtn')
       this.labels.add('dataGdprExpressionBtn')
       returnValue = true
     }
     if (hideElements('.gdpr-lmd-wall')) {
-      console.info('######################## gdprWall')
+      logger('######################## gdprWall')
       this.labels.add('gdprWall')
     }
 
     if (hideElements('#js-message-register')) {
-      console.info('######################## dataGdprExpressionBanner')
+      logger('######################## dataGdprExpressionBanner')
       removeClasses('body', ['popin-gdpr-no-scroll'])
       removeClasses('html', ['popin-gdpr-no-scroll'])
       this.labels.add('dataGdprExpressionBanner')
@@ -121,7 +122,7 @@ export class ElementsProvider {
   checkFc(): boolean {
     // https://www.bbc.com
     if (removeElements('.fc-consent-root')) {
-      console.info('######################## bannerFc')
+      logger('######################## bannerFc')
       this.labels.add('bannerFc')
       removeElements('.bbccookies-banner')
       return true
@@ -132,7 +133,7 @@ export class ElementsProvider {
   checkIabeurope(): boolean {
     if (hideElements('#cookie-law-info-bar')) {
       // https://iabeurope.eu
-      console.info('######################## bannerIABEurope')
+      logger('######################## bannerIABEurope')
       this.labels.add('bannerIABEurope')
       return true
     }
@@ -142,7 +143,7 @@ export class ElementsProvider {
   checkStackoverflow(): boolean {
     if (hideElements('.js-consent-banner')) {
       // https://stackoverflow.com
-      console.info('######################## stackoverflowBanner')
+      logger('######################## stackoverflowBanner')
       this.labels.add('stackoverflowBanner')
       return true
     }
@@ -152,7 +153,7 @@ export class ElementsProvider {
   checkGitBook(): boolean {
     if (clickElements(`#animatedComponent > div > div > div[tabindex="0"]`)) {
       // gitbook.com
-      console.info('######################## gitbookBanner')
+      logger('######################## gitbookBanner')
       this.labels.add('gitbookBanner')
       return true
     }
@@ -162,7 +163,7 @@ export class ElementsProvider {
   checkSnigel(): boolean {
     if (hideElements('#snigel-cmp-framework')) {
       // https://www.linguee.fr
-      console.info('######################## snigel')
+      logger('######################## snigel')
       this.labels.add('snigel')
       return true
     }
@@ -172,7 +173,7 @@ export class ElementsProvider {
   checkSfr(): boolean {
     if (hideElements('#CkC')) {
       // https://www.sfr.fr
-      console.info('######################## sfr')
+      logger('######################## sfr')
       this.labels.add('sfr')
       return true
     }
@@ -182,7 +183,7 @@ export class ElementsProvider {
   checkTarteAuCitron(): boolean {
     if (hideElements('#tarteaucitronRoot')) {
       // https://www.ameli.fr
-      console.info('######################## tarte au citron')
+      logger('######################## tarte au citron')
       this.labels.add('tarteAuCitron')
       return true
     }
@@ -192,7 +193,7 @@ export class ElementsProvider {
   checkEbay(): boolean {
     if (clickElements('#gdpr-banner-decline')) {
       // https://ebay.fr
-      console.info('######################## ebay')
+      logger('######################## ebay')
       this.labels.add('ebay')
       return true
     }
@@ -202,7 +203,7 @@ export class ElementsProvider {
   checkAliexpress(): boolean {
     if (clickElements('[data-role="gdpr-reject"]')) {
       // https://aliexpress.com
-      console.info('######################## aliexpress')
+      logger('######################## aliexpress')
       this.labels.add('aliexpress')
       return true
     }
@@ -212,7 +213,7 @@ export class ElementsProvider {
   checkTwitch(): boolean {
     if (removeElements('.consent-banner')) {
       // https://www.twitch.tv
-      console.info('######################## twitch')
+      logger('######################## twitch')
       this.labels.add('twitch')
       return true
     }
@@ -222,7 +223,7 @@ export class ElementsProvider {
   checkLdlc(): boolean {
     if (clickElements('#cookieConsentRefuseButton')) {
       // https://www.ldlc.com/
-      console.info('######################## ldlc')
+      logger('######################## ldlc')
       this.labels.add('ldlc')
       return true
     }

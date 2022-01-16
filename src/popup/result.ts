@@ -1,6 +1,6 @@
 import browser from 'webextension-polyfill'
 import { Config } from '../common/config'
-import { retry } from '../common/utils'
+import { logger, retry } from '../common/utils'
 import { AddWebsite } from './addWebsite'
 
 export class Result {
@@ -59,7 +59,7 @@ export class Result {
       return false
     }
     browser.runtime.onMessage.addListener((message, sender) => {
-      console.log('got message', message, sender.tab?.windowId)
+      logger('got message', message, sender.tab?.windowId)
       this.title.textContent = 'Founds:'
       this.container.style.display = 'block'
       this.addWebsite.showButton()
@@ -69,7 +69,7 @@ export class Result {
       } else {
         this.container.innerHTML = ''
         message.results.forEach((label: string) => {
-          console.log('label', label)
+          logger('label', label)
           const el = document.createElement('li')
           const link = document.createElement('a')
           link.target = '_blank'

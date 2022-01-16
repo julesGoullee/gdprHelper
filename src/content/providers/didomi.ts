@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { hideElements } from '../utils'
 
 export class DidomiProvider {
@@ -9,7 +10,7 @@ export class DidomiProvider {
     if (window.Didomi && window.didomiOnReady) {
       // https://www.marmiton.org
       // https://www.lachainemeteo.com
-      console.info('######################## Didomi')
+      logger('######################## Didomi')
       this.found = true
       this.labels.add('didomi')
       window.didomiOnReady.push((Didomi: any) => {
@@ -23,14 +24,14 @@ export class DidomiProvider {
 
       // https://www.20minutes.fr/
       if (hideElements('.mbrs-cookieBanner')) {
-        console.info('######################## 20 minutes')
+        logger('######################## 20 minutes')
         this.done = true
         this.labels.add('Banner 20minutes')
       }
 
       // https://actu.fr/
       if (hideElements('.ac-banner-cookies')) {
-        console.info('######################## bannersActuFr')
+        logger('######################## bannersActuFr')
         this.done = true
         this.labels.add('Banner actu.fr')
       }

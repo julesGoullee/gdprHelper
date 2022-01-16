@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { clickElements } from '../utils'
 
 export class OrejimeProvider {
@@ -8,7 +9,7 @@ export class OrejimeProvider {
 
   check() {
     if (window.orejime) {
-      console.info('######################## orejime')
+      logger('######################## orejime')
       if (clickElements('.orejime-Button--decline')) {
         this.labels.add('orejime')
         this.found = true

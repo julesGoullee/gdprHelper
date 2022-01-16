@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { clickElements } from '../utils'
 
 export class QuantcastProvider {
@@ -9,7 +10,7 @@ export class QuantcastProvider {
   check() {
     // https://www.huffpost.com
     if (clickElements('.qc-cmp2-summary-buttons > button[mode="secondary"]')) {
-      console.info('######################## quantcast')
+      logger('######################## quantcast')
       this.found = true
       this.done = true
       this.labels.add('quantcast')

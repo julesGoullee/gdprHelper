@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { clickElements } from '../utils'
 
 export class CookieBotProvider {
@@ -9,7 +10,7 @@ export class CookieBotProvider {
   check() {
     // https://www.cookiebot.com
     if (window.CookieConsent) {
-      console.info('######################## cookieBot')
+      logger('######################## cookieBot')
       if (clickElements('#CybotCookiebotDialogBodyButtonDecline')) {
         this.found = true
         this.done = true

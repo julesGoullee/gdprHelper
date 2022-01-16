@@ -1,3 +1,5 @@
+import { logger } from '../../common/utils'
+
 export class ConsentManagerProvider {
   found: boolean = false
   done: boolean = false
@@ -8,7 +10,7 @@ export class ConsentManagerProvider {
     // https://www.freepik.com
     // https://www.vanityfair.fr
     if (window.OneTrust && window.OneTrust.RejectAll) {
-      console.info('######################## ConsentManager')
+      logger('######################## ConsentManager')
       try {
         window.OneTrust.RejectAll()
       } catch (err) {}

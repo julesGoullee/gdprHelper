@@ -1,4 +1,6 @@
-console.log('inject')
+import { logger } from '../common/utils'
+
+logger('inject')
 const defaultWindowsKeys = [
   '0',
   'window',
@@ -233,4 +235,4 @@ const defaultWindowsKeys = [
 Object.keys(window)
   .filter((k) => !defaultWindowsKeys.includes(k))
   .sort((a, b) => (a > b ? 1 : -1))
-  .forEach((k) => console.info('windows key', k))
+  .forEach((k) => logger('windows key', k))

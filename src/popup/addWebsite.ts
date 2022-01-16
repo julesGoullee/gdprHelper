@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Config } from '../common/config'
+import { logger } from '../common/utils'
 
 export class AddWebsite {
   button: HTMLButtonElement
@@ -38,7 +39,7 @@ export class AddWebsite {
             url: this.location,
           })}`
         )
-        console.log('Added', res)
+        logger('Added', res)
         this.button.textContent = 'We will take care of it'
       }
     })

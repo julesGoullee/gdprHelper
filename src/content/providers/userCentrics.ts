@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { removeElements } from '../utils'
 
 export class UserCentricsProvider {
@@ -20,7 +21,7 @@ export class UserCentricsProvider {
 
   v1() {
     if (window.cmpmngr && window.cmpmngr.setConsentViaBtn) {
-      console.info('######################## UserCentrics')
+      logger('######################## UserCentrics')
       window.cmpmngr.setConsentViaBtn(0)
       this.found = true
       this.done = true
@@ -32,7 +33,7 @@ export class UserCentricsProvider {
     // https://usercentrics.com
     if (window.uc && window.uc.isCMPLoaded) {
       this.found = true
-      console.info('######################## usercentrics uc')
+      logger('######################## usercentrics uc')
       this.labels.add('userCentrics')
       if (removeElements('#usercentrics-root')) {
         this.done = true

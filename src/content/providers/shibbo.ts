@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { hideElements } from '../utils'
 
 export class SibboProvider {
@@ -11,7 +12,7 @@ export class SibboProvider {
     if (window.SibboCMP) {
       try {
         if (window.SibboCMP.isOpen()) {
-          console.info('######################## sibbo')
+          logger('######################## sibbo')
           if (hideElements('.sibbo-layout')) {
             this.found = true
             this.done = true

@@ -1,9 +1,10 @@
+import { logger } from '../common/utils'
 import { providers } from './providers'
 
 function tryIt(i = 1) {
-  console.log('try', i)
+  logger('try', i)
   if (i > 5) {
-    console.log('Try max time reach')
+    logger('Try max time reach')
     window.postMessage({
       type: 'GDPR_HELPER',
       results: providers.map((p) => Array.from(p.labels)).flat(),

@@ -1,3 +1,5 @@
+import { logger } from '../../common/utils'
+
 export class TcfApiProvider {
   found: boolean = false
   done: boolean = false
@@ -6,7 +8,7 @@ export class TcfApiProvider {
 
   check() {
     if (window.__tcfapi) {
-      console.info(
+      logger(
         '######################## Consent Management framework',
         window.__tcfapi
       )
@@ -21,7 +23,7 @@ export class TcfApiProvider {
         this.found = true
       })
       // window.__tcfapi('getTCData', 2, (tcData: any, ok: any) => {
-      //   console.info('getTCData', tcData, ok)
+      //   logger('getTCData', tcData, ok)
       // })
       // window.__tcfapi('reject', 2, () => {
       //   window.__tcfapi('toggleConsentTool', 2, null, false)

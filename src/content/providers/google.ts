@@ -1,3 +1,4 @@
+import { logger } from '../../common/utils'
 import { clickElements } from '../utils'
 
 export class GoogleProvider {
@@ -9,7 +10,7 @@ export class GoogleProvider {
   check() {
     if (window.location.host === 'www.google.com') {
       if (clickElements('#VnjCcb')) {
-        console.info('######################## google btn')
+        logger('######################## google btn')
         this.found = true
         this.done = true
         this.labels.add('googleBtn')
@@ -22,7 +23,7 @@ export class GoogleProvider {
         (btn) => btn.innerHTML === 'Confirm'
       )
       if (confirm) {
-        console.info('######################## google consent confirm')
+        logger('######################## google consent confirm')
         confirm.click()
         this.found = true
         this.done = true

@@ -1,3 +1,5 @@
+import { logger } from '../../common/utils'
+
 export class IubendaProvider {
   found: boolean = false
   done: boolean = false
@@ -12,7 +14,7 @@ export class IubendaProvider {
       window._iub.cs.api &&
       window._iub.cs.api.consentGiven
     ) {
-      console.info('######################## iubenda')
+      logger('######################## iubenda')
       this.found = true
       window._iub.cs.options.callback.onBannerShown = () => {
         window._iub.cs.api.consentGiven('rejectButtonClick')
