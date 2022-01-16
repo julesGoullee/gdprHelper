@@ -1,11 +1,11 @@
 import browser from 'webextension-polyfill'
+import { retry } from '../common/utils'
 import { Inject } from './injectConsent'
-import { retry } from './utils'
 
 let results: any = null
 
-function embed(fn: Function) {
-  console.info('embed')
+function embedScript(fn: Function) {
+  console.info('embedScript')
   const script = document.createElement('script')
   script.type = 'text/javascript'
   script.async = true
@@ -13,7 +13,7 @@ function embed(fn: Function) {
   document.documentElement.appendChild(script)
 }
 
-function listenInPage() {
+function listenInject() {
   window.addEventListener('message', async (event) => {
     if (event.data && event.data.type === 'GDPR_HELPER') {
       console.log('new window message', event.data)
@@ -37,8 +37,8 @@ browser.storage.sync.get('enable').then((options) => {
     console.log('not enable')
     return false
   }
-  setTimeout(() => embed(Inject), 100)
-  listenInPage()
+  setTimeout(() => embedScript(Inject), 100)
+  listenInject()
   setTimeout(() => {
     browser.runtime.onMessage.addListener(async (message) => {
       console.log('new runtime message', message, results)

@@ -12,13 +12,13 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.ts"],
+      "js": ["content/content.ts"],
       "run_at": "document_end"
     }
   ],
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_title": "title"
   },
   "web_accessible_resources": [],

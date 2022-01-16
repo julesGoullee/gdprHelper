@@ -134,7 +134,7 @@
       }
 
       // consentmanager
-      if (!!window.cmpmngr) {
+      if (window.cmpmngr) {
         log('consentmanager')
         const status = window.cmpmngr.consentStatus()
 
@@ -156,14 +156,14 @@
       }
 
       // tarteaucitron
-      if (!!window.tarteaucitron) {
+      if (window.tarteaucitron) {
         log('tarteaucitron')
         tarteaucitron.userInterface.respondAll(false)
         clearInterval(kick)
       }
 
       // createit
-      if (!!window.ct_ultimate_gdpr_cookie) {
+      if (window.ct_ultimate_gdpr_cookie) {
         log('createit')
         elClick('#ct-ultimate-gdpr-cookie-change-settings', () => {
           elClick(
@@ -178,7 +178,7 @@
       }
 
       // cookiebot
-      if (!!window.Cookiebot) {
+      if (window.Cookiebot) {
         log('cookiebot')
         elClick('#CybotCookiebotDialogBodyButtonDecline', () => {
           clearInterval(kick)
@@ -225,7 +225,7 @@
       }
 
       // appconsent
-      if (!!window.__tcfapi) {
+      if (window.__tcfapi) {
         log('appconsent')
         __tcfapi('deny', 2, () => {})
       }
@@ -244,7 +244,7 @@
       }
 
       // klaro
-      if (!!window.klaro) {
+      if (window.klaro) {
         log('klaro')
         if (document.querySelector('.cn-decline')) {
           elClick('.cn-decline')
@@ -260,8 +260,8 @@
       }
 
       // orejime
-      if (!!window.orejime) {
-        if (!!window.orejime.manager) {
+      if (window.orejime) {
+        if (window.orejime.manager) {
           log('orejime manager')
           elClick('.orejime-Button--info', () => {
             Object.keys(orejime.internals.manager.consents).forEach(
@@ -280,7 +280,7 @@
       }
 
       // axel springer oil
-      if (!!window.AS_OIL) {
+      if (window.AS_OIL) {
         log('axel springer oil')
         AS_OIL.triggerOptOut()
         AS_OIL.showPreferenceCenter()
@@ -289,7 +289,7 @@
       }
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
-      if (!!window.theShield) {
+      if (window.theShield) {
         log('theShield')
         fireEvent('#banner-cookie_customize', 'mousedown')
 
@@ -361,7 +361,7 @@
         clearInterval(kick)
       }
       // LiveRamp
-      if (!!window.__tcfapi) {
+      if (window.__tcfapi) {
         log('liveramp')
         __tcfapi('reject', 2, () => {
           __tcfapi('toggleConsentTool', 2, null, false)
