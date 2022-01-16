@@ -80,6 +80,7 @@ async function init() {
 
   addWebsiteButton.addEventListener('click', async () => {
     addWebsiteButton.classList.add('disable')
+    addWebsiteButton.disabled = true
     addWebsiteButton.textContent = 'Sending....'
     if (location) {
       const res = await axios.get(

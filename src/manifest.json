@@ -1,8 +1,8 @@
 {
   "name": "GDPR Helper",
   "version": "0.0.1",
-  "description": "GDPR browser extension",
-  "homepage_url": "https://github.com",
+  "description": "GDPR helper assist you browsing website and express your non consent to website data collection and tracking",
+  "homepage_url": "https://github.com/julesGoullee/gdprHelper",
   "manifest_version": 2,
   "minimum_chrome_version": "74",
   "icons": {

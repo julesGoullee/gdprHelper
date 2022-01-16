@@ -7,6 +7,7 @@
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "chronme:dev": "web-ext run -t chromium",
+    "export": "npm run build && web-ext build --overwrite-dest",
     "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
     "deploy:ghpages": "gh-pages -d src/static"
   },
