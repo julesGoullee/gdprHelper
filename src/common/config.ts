@@ -20,8 +20,8 @@ export const Config: any = {
       label: 'Didomi',
     },
     iubenda: {
-      url: 'https://www.didomi.io',
-      label: 'https://iubenda.com',
+      url: 'https://www.iubenda.com',
+      label: 'Iubenda',
     },
     oneTrust: {
       url: 'https://www.onetrust.com',
