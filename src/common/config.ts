@@ -2,6 +2,10 @@ export const Config: any = {
   SPREADSHEET_BASE_URL:
     'https://script.google.com/macros/s/AKfycbzZElwSPpV3GX0lOLYaKVB2-XqtDnYLzxmV8y0v733b6XyIRLe0t8-0Hs-FWm15dJTs/exec?',
   details: {
+    axeptio: {
+      url: 'https://www.axeptio.eu',
+      label: 'Axeptio',
+    },
     consentManager: {
       url: 'https://www.consentmanager.net',
       label: 'Consent Manager',

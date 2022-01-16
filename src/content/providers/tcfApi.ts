@@ -16,7 +16,7 @@ export class TcfApiProvider {
         this.labels.add('tcfApi')
       })
       window.__tcfapi('reject', 2, () => {
-        window.__tcfapi('toggleConsentTool', 2, null, false)
+        window.__tcfapi('toggleConsentTool', 2, () => {}, false)
         this.labels.add('tcfApi')
         this.found = true
       })

@@ -1,8 +1,8 @@
 import {
   clickElements,
   hideElements,
+  removeClasses,
   removeElements,
-  rmClasses,
 } from '../utils'
 
 export class ElementsProvider {
@@ -23,6 +23,10 @@ export class ElementsProvider {
     'checkGitBook',
     'checkSnigel',
     'checkSfr',
+    'checkTarteAuCitron',
+    'checkEbay',
+    'checkAliexpress',
+    'checkTwitch',
   ]
 
   check() {
@@ -105,8 +109,8 @@ export class ElementsProvider {
 
     if (hideElements('#js-message-register')) {
       console.info('######################## dataGdprExpressionBanner')
-      rmClasses('body', ['popin-gdpr-no-scroll'])
-      rmClasses('html', ['popin-gdpr-no-scroll'])
+      removeClasses('body', ['popin-gdpr-no-scroll'])
+      removeClasses('html', ['popin-gdpr-no-scroll'])
       this.labels.add('dataGdprExpressionBanner')
       returnValue = true
     }
@@ -169,6 +173,46 @@ export class ElementsProvider {
       // https://www.sfr.fr
       console.info('######################## sfr')
       this.labels.add('sfr')
+      return true
+    }
+    return false
+  }
+
+  checkTarteAuCitron(): boolean {
+    if (hideElements('#tarteaucitronRoot')) {
+      // https://www.ameli.fr
+      console.info('######################## tarte au citron')
+      this.labels.add('tarteAuCitron')
+      return true
+    }
+    return false
+  }
+
+  checkEbay(): boolean {
+    if (clickElements('#gdpr-banner-decline')) {
+      // https://ebay.fr
+      console.info('######################## ebay')
+      this.labels.add('ebay')
+      return true
+    }
+    return false
+  }
+
+  checkAliexpress(): boolean {
+    if (clickElements('[data-role="gdpr-reject"]')) {
+      // https://aliexpress.com
+      console.info('######################## aliexpress')
+      this.labels.add('aliexpress')
+      return true
+    }
+    return false
+  }
+
+  checkTwitch(): boolean {
+    if (removeElements('.consent-banner')) {
+      // https://www.twitch.tv
+      console.info('######################## twitch')
+      this.labels.add('twitch')
       return true
     }
     return false
