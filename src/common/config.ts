@@ -10,6 +10,10 @@ export const Config: any = {
       url: 'https://www.consentmanager.net',
       label: 'Consent Manager',
     },
+    cookieBot: {
+      url: 'https://www.cookiebot.com',
+      label: 'Cookie bot',
+    },
     didomi: {
       url: 'https://www.didomi.io',
       label: 'Didomi',

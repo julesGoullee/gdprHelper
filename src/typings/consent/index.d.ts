@@ -4,6 +4,7 @@ declare module 'consent' {
       Didomi: any
       axeptioSDK: any
       didomiOnReady: any
+      CookieConsent: any
       OneTrust: any
       cmp: any
       Osano: any

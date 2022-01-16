@@ -1,5 +1,6 @@
 import { AxeptioProvider } from './axeptio'
 import { ConsentManagerProvider } from './consentManager'
+import { CookieBotProvider } from './cookiebot'
 import { CpmProvider } from './cpm'
 import { DidomiProvider } from './didomi'
 import { ElementsProvider } from './elements'
@@ -19,6 +20,7 @@ import { UserCentricsProvider } from './userCentrics'
 export const providers = [
   new AxeptioProvider(),
   new ConsentManagerProvider(),
+  new CookieBotProvider(),
   new CpmProvider(),
   new DidomiProvider(),
   new ElementsProvider(),
