@@ -30,6 +30,10 @@ export const Config: any = {
       url: 'https://www.osano.com',
       label: 'Osano',
     },
+    quantcast: {
+      url: 'https://www.quantcast.com/products/choice-consent-management-platform',
+      label: 'Quantcast',
+    },
     sibbo: {
       url: 'https://sibboventures.com',
       label: 'Sibbo',

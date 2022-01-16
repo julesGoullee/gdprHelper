@@ -8,6 +8,7 @@ import { IubendaProvider } from './iubenda'
 import { OneTrustProvider } from './oneTrust'
 import { OrejimeProvider } from './orejime'
 import { OsanoProvider } from './osano'
+import { QuantcastProvider } from './quantcast'
 import { SibboProvider } from './shibbo'
 import { SirdataProvider } from './sirdata'
 import { TcfApiProvider } from './tcfApi'
@@ -26,6 +27,7 @@ export const providers = [
   new OneTrustProvider(),
   new OrejimeProvider(),
   new OsanoProvider(),
+  new QuantcastProvider(),
   new SibboProvider(),
   new SirdataProvider(),
   new TcfApiProvider(),

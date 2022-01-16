@@ -27,6 +27,7 @@ export class ElementsProvider {
     'checkEbay',
     'checkAliexpress',
     'checkTwitch',
+    'checkLdlc',
   ]
 
   check() {
@@ -213,6 +214,16 @@ export class ElementsProvider {
       // https://www.twitch.tv
       console.info('######################## twitch')
       this.labels.add('twitch')
+      return true
+    }
+    return false
+  }
+
+  checkLdlc(): boolean {
+    if (clickElements('#cookieConsentRefuseButton')) {
+      // https://www.ldlc.com/
+      console.info('######################## ldlc')
+      this.labels.add('ldlc')
       return true
     }
     return false
