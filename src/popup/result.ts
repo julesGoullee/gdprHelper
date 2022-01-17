@@ -59,12 +59,12 @@ export class Result {
       return false
     }
     browser.runtime.onMessage.addListener((message, sender) => {
-      logger('got message', message, sender.tab?.windowId)
+      logger('popup got message', message, sender.tab?.windowId)
       this.title.textContent = 'Founds:'
       this.container.style.display = 'block'
       this.addWebsite.showButton()
       this.addWebsite.location = message.location
-      if (Object.keys(message.results).length === 0) {
+      if (message.results.length === 0) {
         this.container.innerHTML = 'Nothing'
       } else {
         this.container.innerHTML = ''

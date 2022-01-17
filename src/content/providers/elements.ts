@@ -102,20 +102,24 @@ export class ElementsProvider {
     if (clickElements('[data-gdpr-expression="denyAll"]')) {
       logger('######################## dataGdprExpressionBtn')
       this.labels.add('dataGdprExpressionBtn')
-      returnValue = true
+      if (hideElements('#js-message-register')) {
+        logger('######################## dataGdprExpressionBanner')
+        removeClasses('body', ['popin-gdpr-no-scroll'])
+        removeClasses('html', ['popin-gdpr-no-scroll'])
+        this.labels.add('dataGdprExpressionBanner')
+        returnValue = true
+      }
+    } else if (hideElements('#js-message-register')) {
+      logger('######################## dataGdprExpressionBanner')
+      removeClasses('body', ['popin-gdpr-no-scroll'])
+      removeClasses('html', ['popin-gdpr-no-scroll'])
+      this.labels.add('dataGdprExpressionBanner')
     }
     if (hideElements('.gdpr-lmd-wall')) {
       logger('######################## gdprWall')
       this.labels.add('gdprWall')
     }
 
-    if (hideElements('#js-message-register')) {
-      logger('######################## dataGdprExpressionBanner')
-      removeClasses('body', ['popin-gdpr-no-scroll'])
-      removeClasses('html', ['popin-gdpr-no-scroll'])
-      this.labels.add('dataGdprExpressionBanner')
-      returnValue = true
-    }
     return returnValue
   }
 
