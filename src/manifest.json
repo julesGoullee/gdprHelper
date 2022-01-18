@@ -1,6 +1,6 @@
 {
   "name": "GDPR Helper",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "GDPR helper assist you browsing website and express your non consent to website data collection and tracking",
   "homepage_url": "https://github.com/julesGoullee/gdprHelper",
   "manifest_version": 2,
