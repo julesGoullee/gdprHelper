@@ -28,6 +28,7 @@ export class ElementsProvider {
     'checkEbay',
     'checkAliexpress',
     'checkTwitch',
+    'checkTwitter',
     'checkLdlc',
   ]
 
@@ -219,6 +220,16 @@ export class ElementsProvider {
       // https://www.twitch.tv
       logger('######################## twitch')
       this.labels.add('twitch')
+      return true
+    }
+    return false
+  }
+
+  checkTwitter(): boolean {
+    if (clickElements('#layers > div > div > div > div > div > div:nth-child(2) > div:nth-child(2)')) {
+      // https://www.twitter.com
+      logger('######################## twitter')
+      this.labels.add('twitter')
       return true
     }
     return false
