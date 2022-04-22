@@ -1,10 +1,10 @@
 {
   "name": "GDPR Helper",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "GDPR helper assist you browsing website and express your non consent to website data collection and tracking",
   "homepage_url": "https://github.com/julesGoullee/gdprHelper",
-  "manifest_version": 2,
-  "minimum_chrome_version": "74",
+  "manifest_version": 3,
+  "minimum_chrome_version": "88",
   "icons": {
     "128": "icon.png"
   },
@@ -16,14 +16,17 @@
       "run_at": "document_end"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_icon": "icon.png",
     "default_popup": "popup/popup.html",
     "default_title": "title"
   },
-  "web_accessible_resources": ["content/injectConsent.ts"],
+  "web_accessible_resources": [{
+    "resources": ["content/injectConsent.ts"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
   "background": {
-    "persistent": true,
-    "scripts": ["background.ts"]
+    "type": "module",
+    "service_worker": "background.ts"
   }
 }

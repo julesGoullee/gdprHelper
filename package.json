@@ -18,24 +18,25 @@
     "last 1 Firefox version"
   ],
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^0.26.1",
     "gh-pages": "^3.2.3",
-    "webextension-polyfill": "^0.8.0"
+    "webextension-polyfill": "^0.9.0"
   },
   "devDependencies": {
-    "@parcel/config-webextension": "^2.0.0-rc.0",
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "@types/webextension-polyfill": "^0.8.2",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
-    "eslint": "^8.6.0",
-    "eslint-config-prettier": "^8.3.0",
-    "parcel": "^2.0.0-rc.0",
-    "prettier": "^2.5.1",
+    "@parcel/config-webextension": "^2.5.0",
+    "@parcel/transformer-image": "^2.5.0",
+    "@parcel/transformer-sass": "^2.5.0",
+    "@types/webextension-polyfill": "^0.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2",
     "prettier-plugin-organize-imports": "^2.3.4",
-    "typescript": "^4.5.4",
-    "web-ext": "^6.6.0"
+    "process": "^0.11.10",
+    "typescript": "^4.6.3",
+    "web-ext": "^6.8.0"
   },
   "webExt": {
     "sourceDir": "distribution"

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import browser from 'webextension-polyfill'
 import { logger, retry } from '../common/utils'
 
@@ -9,8 +8,8 @@ async function injectScript(path: string) {
   const script = document.createElement('script')
   script.type = 'text/javascript'
   script.async = true
-  const content = await axios.get(browser.runtime.getURL(path))
-  script.text = content.data
+  const src = browser.runtime.getURL(path)
+  script.src = src
   document.documentElement.appendChild(script)
 }
 
